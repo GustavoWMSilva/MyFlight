@@ -18,7 +18,7 @@ public class Rota {
 	}
 	
 	public Aeroporto getDestino() {
-		return destino;
+		return destino; 
 	}
 	
 	public Aeroporto getOrigem() {
