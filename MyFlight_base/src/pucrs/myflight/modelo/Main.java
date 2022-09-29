@@ -17,7 +17,7 @@ public class Main {
 
         LocalDateTime datahoraV1 = LocalDateTime.of(2022, 8, 9, 8, 00);
         LocalDateTime datahoraV2 = LocalDateTime.of(2022, 12, 10, 22, 00);
-        LocalDateTime datahoraV3 = LocalDateTime.of(2022, 28, 11, 12, 00);
+        LocalDateTime datahoraV3 = LocalDateTime.of(2022, 11, 28, 12, 00);
       
         Duration duracaoV1 = Duration.ofMinutes(90); 
         Duration duracaoV2 = Duration.ofMinutes(120); 
@@ -36,19 +36,19 @@ public class Main {
 		Aeronave n5=new Aeronave("332", "Boeing 743", 304);
 		Aeronave n6=new Aeronave("320", "Airbus A550", 304);
 
-        Geo g1=new Geo(-29.9939, -51.1711);
-        Geo g2=new Geo(-23.4356, -46.4731);
-        Geo g3=new Geo(38.7742, -9.1342);
-        Geo g4=new Geo(25.7933, -80.2906);
-        Geo g5=new Geo(25.7933, -80.2906);
-        Geo g6=new Geo(25.7933, -80.2906);
+        Geo g1=new Geo(-29.9939, -51.1711);//Porto Alegre
+        Geo g2=new Geo(-23.4356, -46.4731);//Guarulhos
+        Geo g3=new Geo(38.7742, -9.1342);//Lisboa
+        Geo g4=new Geo(25.7933, -80.2906);//Miami
+        Geo g5=new Geo(20.8233, -30.3906);//aleatorio
+        Geo g6=new Geo(28.9999, -60.1134);//aleatorio
 
         Aeroporto p1=new Aeroporto("POA", "Salgado Filho Intl Apt", g1);	
 		Aeroporto p2=new Aeroporto("GRU", "São Paulo Guarulhos Intl Apt", g2);
 		Aeroporto p3=new Aeroporto("LIS	", "Lisbon",g3 );
 		Aeroporto p4=new Aeroporto("MIA", "Miami International Apt",g4 );
-		Aeroporto p5=new Aeroporto("GIG", "",g5 );
-		Aeroporto p6=new Aeroporto("AEP", "",g6 );
+		Aeroporto p5=new Aeroporto("GIG", "Aleatorio 1",g5 );
+		Aeroporto p6=new Aeroporto("AEP", "Aleatorio 2",g6 );
 
 
         Rota r1=new Rota(c2, p2, p1, n2);
@@ -68,8 +68,6 @@ public class Main {
         //criando novos voos com o segundo construtor
         Voo v4 = new Voo(r2, duracaoV3);
         Voo v5 = new Voo(r4, duracaoV1);
-
-      
 
         listaCia.add(c1);
         listaCia.add(c2);
@@ -102,6 +100,10 @@ public class Main {
         listaVoo.add(v3);
         listaVoo.add(v4);
         listaVoo.add(v5);
+
+        //calculando a distancia entre Porto Alegre e Guarulhos
+        double d1 = Geo.distancia(g1, g2);
+        System.out.printf ("\nDistancia entre POA e GRU: %.2f km", d1);
         
 
 	}
