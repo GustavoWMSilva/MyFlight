@@ -105,6 +105,12 @@ public class Main {
         double d1 = Geo.distancia(g1, g2);
         System.out.printf ("\nDistancia entre POA e GRU: %.2f km", d1);
         
-
+        Voo v7 =new Voo(r1, duracaoV1);
+        VooEscalas v8 = new VooEscalas(r3, r4, duracaoV2);
+        VooVariasEscalas v9 = new VooEscalas(r3, r4, r5, r6, duracaoV2);
+        
+        System.out.println (v7);
+        System.out.println (v8);
+        System.out.println (v9);
 	}
 }

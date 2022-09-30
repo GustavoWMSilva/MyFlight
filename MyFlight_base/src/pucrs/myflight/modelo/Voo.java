@@ -1,4 +1,8 @@
+
 package pucrs.myflight.modelo;
+
+
+
 
 import java.time.Duration;
 import java.time.LocalDateTime;
@@ -43,4 +47,16 @@ public class Voo {
 	public void setStatus(Status novo) {
 		this.status = novo;
 	}
+
+    @Override
+    public String toString()
+    {
+		StringBuilder aux = new StringBuilder(); 
+		aux.append(getRota());
+		aux.append(getDatahora());
+		aux.append(getStatus());
+		
+
+        return aux.toString()	;
+    }
 }
