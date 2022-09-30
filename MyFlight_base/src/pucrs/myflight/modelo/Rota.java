@@ -30,9 +30,8 @@ public class Rota implements Comparable <Rota>
 		return aeronave;
 	}
 
-	@Override
-	public int compareTo (CiaAerea outra) 
+	public int compareTo(Rota x)
 	{
-		return cia.compareTo(outra.getNome());
+		return cia.compareTo(x.getCia());
 	}
 }

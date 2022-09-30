@@ -1,7 +1,6 @@
 package pucrs.myflight.modelo;
-import java.util.*;
 
-public class CiaAerea implements Comparable
+public class CiaAerea implements Comparable<CiaAerea>
 {
 	private String codigo;
 	private String nome;
@@ -19,8 +18,8 @@ public class CiaAerea implements Comparable
 		return nome;
 	}
 	
-	public int compareTo (CiaAerea outra) 
-	{
+	@Override
+	public int compareTo(CiaAerea o) {
 		return 0;
 	}
 }
