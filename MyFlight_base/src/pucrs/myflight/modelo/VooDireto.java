@@ -1,26 +1,26 @@
 package pucrs.myflight.modelo;
 
-import java.time.Duration;
-import java.time.LocalDateTime;
+import java.time.*;
 
-public class VooEscalas extends Voo
-{
-    private Rota rota;
-    private Rota rotaFinal;
-    private int totalVoos = 0;
-
-
-    // Construtor
-    public VooEscalas(Rota rota, Rota rotaFinal, LocalDateTime datahora) {
-        super(datahora); // chama o construtor de Voo
-        this.rotaFinal = rotaFinal;
-        this.rota = rota;
+public class VooDireto extends Voo{
+    public enum Status {CONFIRMADO, ATRASADO, CANCELADO };
+	private int totalVoos = 0;
+	private Rota rota;
+	private Status status;
+	
+	public VooDireto(LocalDateTime dh, Rota rota){
+		super(dh);
         totalVoos++;
-    }
+		this.rota = rota;
+		this.status = Status.CONFIRMADO;
+	}
 
-    public Rota getRota(){return rota;}
-
-    public static double distanciaP(Geo geo1, Geo geo2) {
+	public Rota getRota() {
+		return rota;
+	}
+	
+	
+	public static double distanciaP(Geo geo1, Geo geo2) {
         double lat1 = Math.toRadians(geo1.getLatitude());
         double lat2 = Math.toRadians(geo2.getLatitude());
         double lon1 = Math.toRadians(geo1.getLongitude());
@@ -44,16 +44,17 @@ public class VooEscalas extends Voo
 
 		return  Duration.ofMinutes((long)duracaoM);
 	}
-
-    public Rota getRotaFinal() { return rotaFinal; }
 	
-    public int quantObj()
+	public Status getStatus() {
+		return status;
+	}
+	
+	public void setStatus(Status novo) {
+		this.status = novo;
+	}
+
+	public int quantObj()
 	{
 		return totalVoos;
 	}
-
-    @Override
-    public String toString() {
-       return super.toString() + " -> " + rotaFinal;
-    }
 }

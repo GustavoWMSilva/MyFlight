@@ -58,17 +58,6 @@ public class Main {
         Rota r5=new Rota(c2, p1, p5, n2);
         Rota r6=new Rota(c2, p1, p6, n2);
 
-
-        Voo v1=new Voo(r2,datahoraV1 , duracaoV1);	
-        Voo v2=new Voo(r5,datahoraV2, duracaoV2 );
-        v2.setStatus(Status.ATRASADO);
-        Voo v3=new Voo(r6,datahoraV3, duracaoV3);
-        v3.setStatus(Status.CANCELADO);
-        
-        //criando novos voos com o segundo construtor
-        Voo v4 = new Voo(r2, duracaoV3);
-        Voo v5 = new Voo(r4, duracaoV1);
-
         listaCia.add(c1);
         listaCia.add(c2);
         listaCia.add(c3);
@@ -95,22 +84,9 @@ public class Main {
         listaRotas.add(r5);
         listaRotas.add(r6);
 
-        listaVoo.add(v1);
-        listaVoo.add(v2);
-        listaVoo.add(v3);
-        listaVoo.add(v4);
-        listaVoo.add(v5);
 
         //calculando a distancia entre Porto Alegre e Guarulhos
         double d1 = Geo.distancia(g1, g2);
-        System.out.printf ("\nDistancia entre POA e GRU: %.2f km", d1);
-        
-        Voo v7 =new Voo(r1, duracaoV1);
-        VooEscalas v8 = new VooEscalas(r3, r4, duracaoV2);
-        VooVariasEscalas v9 = new VooEscalas(r3, r4, r5, r6, duracaoV2);
-        
-        System.out.println (v7);
-        System.out.println (v8);
-        System.out.println (v9);
+        System.out.printf("\nDistancia entre POA e GRU: %.2f km", d1);
 	}
 }
